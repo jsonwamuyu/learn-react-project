@@ -8,7 +8,10 @@ on:
       - master
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+        matrix:
+            os: [ubuntu-latest, window-latest, macOS-latest]
     steps:
       - name: Get Code/Checkout Repo
         uses: actions/checkout@v4 # Means select an action

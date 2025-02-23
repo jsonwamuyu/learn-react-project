@@ -1,10 +1,13 @@
 export const Modal = ({ handleCloseModal }) => {
   return (
     <div className="modal-background" onClick={handleCloseModal}>
-      <div className="modal-container flex flex-col gap-[1rem]">
-        <button onClick={handleCloseModal} className="cursor-pointer"> X </button>
+      <div className="modal-container flex flex-col gap-[1rem]" onClick={(e)=>{e.stopPropagation()}}>
+        <div className="flex justify-end">
+        <button onClick={handleCloseModal} className="cursor-pointer bg-red-400 p-1 rounded-full h-8 text-white  w-8"> X </button>
+        </div>
+        
         <div className="modal-header">
-          <h2 className="md-3">Create a Post</h2>
+          <h3 className="md-3">Create a Post</h3>
         </div>
         <div className="modal-body">
           <form action="" className="flex flex-col gap-[0.5rem]">
@@ -13,7 +16,7 @@ export const Modal = ({ handleCloseModal }) => {
               <input
                 type="text"
                 placeholder="Title"
-                className="border border-[gray] p-2 outline-none"
+                className="border border-gray-400 p-2 outline-none rounded-sm"
               />
             </div>
             <div className="flex flex-col">
@@ -22,21 +25,21 @@ export const Modal = ({ handleCloseModal }) => {
                 name="body"
                 id=""
                 rows={4}
-                className="border-[gray] outline-none border p-2"
+                className="border-gray-400 outline-none border p-2 rounded-sm"
                 placeholder="Enter the body"
               ></textarea>
             </div>
           </form>
         </div>
-        <div className="modal-footer flex flex-row justify-between">
+        <div className="modal-footer flex flex-col justify-between mt-[1rem]">
         
-          <button
-            className="bg-gray-500 py-[0.5rem] px-[0.875rem] text-white cursor-pointer"
+          {/* <button
+            className="bg-red-500 py-[0.5rem] px-[0.875rem] text-white cursor-pointer rounded-sm"
             onClick={handleCloseModal}
           >
             Cancel
-          </button>
-          <button className="bg-green-600 py-[0.5rem] px-[0.875rem] text-white cursor-pointer">
+          </button> */}
+          <button className="bg-theme py-[0.5rem] px-[0.875rem] text-white cursor-pointer rounded-sm">
             Submit
           </button>
         </div>

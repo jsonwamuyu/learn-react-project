@@ -21,4 +21,17 @@ h6 {
   font-family: "Montserrat";
 }
 
-
+.modal-background {
+  background-color: rgb(39, 39, 39);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  inset: 0;
+  position: absolute;
+}
+.modal-container {
+  margin:0 auto;
+  padding: 2rem;
+  max-width: 300px;
+  background-color: whitesmoke;
+}

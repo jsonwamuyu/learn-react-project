@@ -5,22 +5,23 @@ import { Modal } from "./components/Modal";
 // import { myProductsData } from "./utils";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const handleOpenModal = () =>{
-    setIsOpen(isOpen == true)
-  }
-  const handleCloseModal = () =>{
-    setIsOpen(isOpen == false)
-  }
+  const [isOpen, setIsOpen] = useState(false);
+  const handleCloseModal = () => {
+    setIsOpen(isOpen == false);
+  };
   return (
     <div className="max-w-[900px] py-[1rem] px-[2rem] mx-auto my-[0] bg-blue-50 min-h-screen w-full">
       <div className=" gap-[0.5rem] justify-center items-center">
         <h3>Welcome</h3>
-        <p>Click to open modal</p>
-        <button onClick={handleOpenModal} className="mt-[1rem] cursor-pointer py-[0.75rem] px-[0.9rem] border-radius-[2rem] bg-blue-600 text-white">Click to Open Modal</button>
+        <p>Create a post today and i promise you will see the magic</p>
+        <button
+          onClick={()=>{setIsOpen(true)}}
+          className="mt-[1rem] cursor-pointer py-[0.75rem] px-[0.9rem] border-radius-[2rem] bg-blue-600 text-white"
+        >
+          Create a post        </button>
         {/* <FilterableProductTable product={myProductsData} /> */}
-        <Modal setIsOpen={setIsOpen} handleCloseModal={handleCloseModal} />
+        {isOpen && 
+        <Modal handleCloseModal={handleCloseModal} />}
       </div>
     </div>
   );
